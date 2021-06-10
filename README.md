@@ -1,6 +1,6 @@
 # circuit playground
 
-## Pre-requests
+## Pre-requisites
 ```
 npm install -g circom
 npm install -g snarkjs
