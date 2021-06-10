@@ -21,3 +21,5 @@ snarkjs wtns export json witness.wtns witness.json || { exit 1; }
 
 snarkjs groth16 prove circuit_final.zkey witness.wtns proof.json public.json || { exit 1; }
 [ $? -eq 0 ] && echo "success: proof.json & public.json"
+
+snarkjs groth16 verify verification_key.json public.json proof.json
