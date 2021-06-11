@@ -1,5 +1,5 @@
 {
-  "name": "circuit-playground",
+  "name": "circom-playground",
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
