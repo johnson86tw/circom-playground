@@ -13,6 +13,7 @@ export interface IMerkleTree {
     pathIndices: number[];
     leaf: string;
   };
+  // DEV: insert should return index of the leaf
   insert: (leaf: string) => void;
 }
 
@@ -127,7 +128,8 @@ export class MerkleTree implements IMerkleTree {
     let currentElement: string = newLeaf;
 
     const handleIndex = (level: number, currentIndex: number, siblingIndex: number) => {
-      const siblingElement = this.storage.get(MerkleTree.indexToKey(level, siblingIndex)) || this.zeros[level];
+      const siblingElement =
+        this.storage.get(MerkleTree.indexToKey(level, siblingIndex)) || this.zeros[level];
 
       let left: string;
       let right: string;
@@ -160,7 +162,10 @@ export class MerkleTree implements IMerkleTree {
   }
 
   // traverse from leaf to root with handler for target node and sibling node
-  private traverse(indexOfLeaf: number, handler: (level: number, currentIndex: number, siblingIndex: number) => void) {
+  private traverse(
+    indexOfLeaf: number,
+    handler: (level: number, currentIndex: number, siblingIndex: number) => void,
+  ) {
     let currentIndex = indexOfLeaf;
     for (let i = 0; i < this.levels; i++) {
       let siblingIndex;
