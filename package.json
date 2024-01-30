@@ -1,9 +1,11 @@
 {
-  "name": "circom-playground",
-  "version": "1.0.0",
-  "license": "MIT",
-  "dependencies": {
-    "circomlib": "^0.5.2",
-    "snarkjs": "^0.4.4"
+  "name": "circom-play",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }

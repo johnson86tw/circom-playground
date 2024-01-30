@@ -5,10 +5,12 @@ circuit.r1cs
 circuit.sym
 circuit.wasm
 *.ptau
-circuit_0000.zkey
-circuit_final.zkey
 verification_key.json
 witness.wtns
 witness.json
 proof.json
 public.json
+
+*_js
+*_cpp
+verifier.sol
