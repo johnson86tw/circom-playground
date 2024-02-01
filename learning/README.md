@@ -3,9 +3,19 @@
 circom circuit.circom  --r1cs --wasm --sym --c
 ```
 
+### print Rank 1 Constraint System
+```
+snarkjs r1cs print circuit.r1cs
+```
+
 ### generate witness
 ```
 bun ./circuit_js/generate_witness.js circuit_js/circuit.wasm input.json circuit_js/witness.wtns
+```
+
+### export the witness (optional)
+```
+snarkjs wtns export json witness.wtns
 ```
 
 ---
