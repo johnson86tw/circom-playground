@@ -1,11 +1,19 @@
+# Learning
+
 ### compile circom
 ```
 circom circuit.circom  --r1cs --wasm --sym --c
 ```
 
-### print Rank 1 Constraint System
+### print the constraints of Rank 1 Constraint System
+- Need to have .r1cs and .sym
 ```
-snarkjs r1cs print circuit.r1cs
+snarkjs rp circuit.r1cs
+```
+
+### print statistics of the r1cs
+```
+snarkjs ri circuits.r1cs
 ```
 
 ### generate witness
