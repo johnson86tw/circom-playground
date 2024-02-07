@@ -2,6 +2,11 @@
 	"name": "circom-play",
 	"module": "index.ts",
 	"type": "module",
+	"scripts": {
+		"compile": "circom circuit.circom  --r1cs --wasm --sym --c",
+		"witness": "./generate-witness.sh",
+		"prove": "snarkjs zkey contribute circuit_0000.zkey circuit_0001.zkey --name='1st Contributor Name' -v && snarkjs zkey export verificationkey circuit_0001.zkey verification_key.json && snarkjs groth16 prove circuit_0001.zkey ./circuit_js/witness.wtns proof.json public.json && snarkjs groth16 verify verification_key.json public.json proof.json"
+	},
 	"devDependencies": {
 		"bun-types": "latest"
 	},
